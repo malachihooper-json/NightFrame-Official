@@ -3,7 +3,7 @@ title: "NIGHTFRAME: A Capability-Aware Platform for Cooperative Edge Intelligenc
 subtitle: "Architecture, Conceptual Frameworks, and Research Agenda"
 author:
   - name: "Malachi Hooper"
-date: "2026-06-05"
+date: "2026-06-06"
 version: "2.0.0"
 documentclass: article
 papersize: letter
@@ -263,7 +263,7 @@ $$
 Each shard is assigned to a node and consumes the previous shard's output. For
 $n$ shards, end-to-end latency is approximately:
 
-$$T_j = \sum_{m=0}^{n-1} (T_{l,m}+T_{i,m}+T_{t,m}) + T_c$$
+$$T_j = T_{\mathrm{load}} + T_{\mathrm{infer}} + T_{\mathrm{transfer}} + T_{\mathrm{coord}}$$
 
 The implementation creates the ordered assignments, waits for predecessor
 output, records completion, and credits work. The Drone can load an ONNX shard
@@ -289,11 +289,11 @@ $$
 The RF locator stores labeled fingerprints and predicts location through
 distance-weighted nearest neighbors:
 
-$$\hat{p}(x) = \frac{\sum_{j \in N_K(x)} w_j p_j}{\sum_{j \in N_K(x)} w_j}$$
+$$\hat{p}(x) = \operatorname{weighted\_location\_average}(N_K(x))$$
 
 with:
 
-$$w_j = \frac{1}{d(x,x_j)+\epsilon}$$
+$$w_j = 1 / (d(x,x_j)+\epsilon)$$
 
 The handover subsystem observes time-series signal change. Its rule-based
 fallback estimates signal fade using a regression slope and recommends a

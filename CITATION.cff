@@ -6,8 +6,7 @@ authors:
   - family-names: Hooper
     given-names: Malachi
 version: 2.0.0
-date-released: 2026-06-05
-license: proprietary
+date-released: 2026-06-06
 keywords:
   - distributed inference
   - edge intelligence
