@@ -35,12 +35,12 @@ abstract: |
   computation, connectivity, trust, incentives, and operator agency at the
   network edge.
 keywords:
-  - cooperative edge intelligence
-  - distributed inference
-  - capability-aware scheduling
-  - mesh networking
-  - cellular intelligence
-  - socio-technical systems
+  - "cooperative edge intelligence"
+  - "distributed inference"
+  - "capability-aware scheduling"
+  - "mesh networking"
+  - "cellular intelligence"
+  - "socio-technical systems"
 ---
 
 # Executive Summary
