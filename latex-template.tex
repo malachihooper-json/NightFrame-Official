@@ -1,0 +1,12 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$]{article}
+\usepackage{pdfx} % defines \xmpquote and handles metadata safely
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\begin{document}
+$if(title)\title{$title$}\fi
+$if(author)\author{$author$}\fi
+$if(date)\date{$date$}\else\date{\today}\fi
+$if(title)\maketitle\fi
+$body$
+\end{document}
